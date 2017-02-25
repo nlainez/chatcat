@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ChatCat - Topics Goes Here</title>
+    <link rel="stylesheet" href="/css/chatroomStyles.css">
+    <script src="/js/jquery-3.1.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="titlePanel">
+        <h1>ChatCat | Topics Goes Here</h1>
+      </div>
+      <div class="controls">
+        <div class="userPicHolder">
+          <img src="/img/user.jpg" alt="Norman Joya">
+        </div>
+        <p class="userName">Norman Joya</p>
+        <a href="rooms.ejs" id="roomsBtn">Rooms</a>
+        <a href="login.ejs" id="logOutBtn">Logout</a>
+      </div>
+      <div class="chatListDiv">
+        <div class="chatMessagesPanel">
+          <div class="chatMessages">
+            <!-- Loop this for chat messages -->
+            <div class="chatBlock">
+              <div class="userPic">
+                <img src="/img/user.jpg" alt="Norman Joya">
+              </div>
+              <div class="chatMsg">
+                Est enim iudices haec non scripta sed nata lex quam non didicimus accepimus legimus uerum ex natura 
+                ipsa arripuimus hausimus expressimus ad quam non docti sed facti non instituti sed imbuti sumus
+              </div>
+            </div>
+            <!-- Loop end -->
+          </div>
+          <div class="typePanel">
+            <input type="text" name="userInput" placeholder="Type here and press Enter">
+            <a href="#" id="uploadFile" class="fileUploadBtn">Attachment</a>
+          </div>
+        </div>
+        <div class="chatUsers">
+          <!-- Loop this for chat users -->
+          <div class="userBlock">
+            <div class="userPic">
+              <img src="/img/user.jpg" alt="Norman Joya">
+            </div>
+            <div class="cuserName">Norman Joya</div>
+          </div>
+          <!-- Loop end -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
