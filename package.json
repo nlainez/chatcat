@@ -1,0 +1,26 @@
+{
+  "name": "chatcat",
+  "version": "1.0.0",
+  "description": "Repository based on course from u\u001b[1;6D\u001b[1;6D\u001b[1;6D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[''\u001b[DAll About Node.JS' from Udemy",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlainez/chatcat.git"
+  },
+  "author": "Norman Joya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlainez/chatcat/issues"
+  },
+  "homepage": "https://github.com/nlainez/chatcat#readme",
+  "engines": {
+    "node": "6.9.5"
+  },
+  "dependencies": {
+    "ejs": "2.5.6",
+    "express": "^4.14.1"
+  }
+}
