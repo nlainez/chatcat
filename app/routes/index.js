@@ -1,5 +1,5 @@
 'use strict';
-const router = require('express').Router();
+const h = require('../helpers')
 
 module.exports = () => {
   let routes = {
@@ -10,14 +10,17 @@ module.exports = () => {
       '/rooms': (req, res, next) => {
         res.render('rooms');
       },
-      'chat': (req, res, next) => {
+      '/chat': (req, res, next) => {
         res.render('chatroom');
       }
     },
     'post': {},
     'put': {},
-    'delete': {}
+    'delete': {},
+    'NA': (req, res, next) => {
+      res.status(404).sendFile(process.cwd() + '/views/404.htm');
+    }
   };
 
-  // Iterate through the routes objects and mount the routes
+  return h.route(routes);
 };
