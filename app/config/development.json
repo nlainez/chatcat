@@ -7,5 +7,11 @@
     "clientSecret": "84ab823a8170bfbf44683596ba46601c",
     "callbackURL": "//localhost:3000/auth/facebook/callback",
     "profileFields": ["id", "displayName", "photos"]
+  },
+  "twitter": {
+    "consumerKey": "cWqsuid3okO3TEFfI7XD33svB",
+    "consumerSecret": "Z9GnQUOce4ASp90vwLRLwMqJLsEfTLyHh3XUXs3l0dFDOEAupc",
+    "callbackURL": "//localhost:3000/auth/twitter/callback",
+    "profileFields": ["id", "displayName", "photos"]
   }
 }

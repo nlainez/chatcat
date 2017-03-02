@@ -9,14 +9,17 @@
   "author": "normanjoya",
   "license": "ISC",
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-standalone": "^6.23.1",
     "connect-mongo": "^1.3.2",
     "ejs": "^2.5.6",
     "express": "^4.14.1",
     "express-session": "^1.15.1",
-    "mongoose": "4.3.1",
+    "mongoose": "^4.3.1",
     "passport": "^0.3.2",
-    "passport-facebook": "2.0.0",
-    "passport-twitter": "^1.0.4"
+    "passport-facebook": "^2.0.0",
+    "passport-twitter": "^1.0.4",
+    "socket.io": "^1.7.3"
   },
   "engines": {
     "node": "6.10.0"

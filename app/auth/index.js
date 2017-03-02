@@ -3,6 +3,7 @@ const passport = require('passport');
 const config = require('../config');
 const h = require('../helpers');
 const FacebookStrategy = require('passport-facebook').Strategy;
+const TwitterStrategy = require('passport-twitter').Strategy;
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
@@ -17,6 +18,7 @@ module.exports = () => {
   });
 
   // this function is known as the verifying function
+  //let authProcessor = (token, tokenSecret, profile, done) => { // those are the proper parameters that twitter retrieves
   let authProcessor = (accessToken, refreshToken, profile, done) => {
     // find user in the local db using profile.id
     // if the user is found, return the user data
@@ -35,4 +37,5 @@ module.exports = () => {
   };
 
   passport.use(new FacebookStrategy(config.fb, authProcessor));
+  passport.use(new TwitterStrategy(config.twitter, authProcessor));
 };
