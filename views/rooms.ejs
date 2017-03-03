@@ -6,12 +6,37 @@
 	<link rel="stylesheet" href="./css/roomsStyles.css">
 	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script> <!-- Socket.IO creates this route internally, so, no need to write any file -->
-	<script src="babel.min.js"></script>
+	<script src="/babel.min.js"></script>
 	<script>
 		'use strict';
 		$(() => {
 			let socket = io('<%= host %>' + '/roomslist'); //this is a socket namespace NOT A ROUTE
+			let newRoomInput = $("input[name='roomName']")
+
 			socket.on('connect', () => console.log('Connected to server!'));
+			let renderChatRooms	= chatrooms => {
+				let roomsListDiv = $('#roomsListUL');
+				let listStr = '';
+				for(let catchat of chatrooms){
+					listStr += `<a href="/chat/${catchat.roomID}"><li>${catchat.room}</li></a>`;
+				}
+				roomsListDiv.html('').append(listStr);
+			};
+
+			// get a list of chatrooms
+			socket.emit('getChatrooms');
+
+			// event listener for chatRoomsList
+			socket.on('chatRoomsList', chatrooms => {
+				renderChatRooms(JSON.parse(chatrooms));
+			});
+
+			$('#createBtn').on('click', () => {
+				if(newRoomInput.val() !== '') {
+					socket.emit('createNewRoom', newRoomInput.val());
+					newRoomInput.val('');
+				}
+			});
 		});
 	</script>
 </head>
@@ -32,8 +57,8 @@
 		<div class="roomsListDiv">
 			<ul class="roomsList" id="roomsListUL">
 			<!-- Loop list items here -->
-				<a href="chatroom.htm"><li>World Cuisine</li></a>
-				<a href="chatroom.htm"><li>Coffee and Conversations</li></a>
+				
+				<!--<a href="chatroom.htm"><li>Coffee and Conversations</li></a>-->
 			<!-- Loop ends -->
 			</ul>
 		</div>
